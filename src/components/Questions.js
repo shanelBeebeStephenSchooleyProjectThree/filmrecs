@@ -1,5 +1,5 @@
 
-() => {
+const Questions = () => {
     
     return (
         <div>

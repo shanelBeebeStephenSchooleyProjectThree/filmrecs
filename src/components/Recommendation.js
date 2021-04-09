@@ -1,5 +1,5 @@
 
-() => {
+const Recommendation = () => {
     
     return (
         <div>
