@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Recommendation from './components/Recommendation';
+import ErrorMessage from './components/ErrorMessage'
 import Footer from './components/Footer';
 import Questions from './components/Questions';
 import React, { useState, useEffect } from 'react';
@@ -20,7 +21,8 @@ function App() {
   const [overview, setOverview] = useState('');
   const [releaseDate, setReleaseDate] = useState('');
   const [avgRating, setAvgRating] = useState('');
-  const [poster, setPoster] = useState('')
+  const [poster, setPoster] = useState('');
+  const [error, setError] = useState('');
 
   const getSelectedGenre = (e) => {
     setGenre(parseInt(e.target.value));
@@ -64,17 +66,25 @@ function App() {
         }
       })
       .then(function (res) {
+        setError('');
         const resultsArray = res.data.results;
         const randomIndex = Math.floor(Math.random() * resultsArray.length)
-        const randomFilm = resultsArray[randomIndex];
-        const posterURL = 'https://image.tmdb.org/t/p/w500'
-        const posterPath = randomFilm.poster_path;
-        const voteAvg = randomFilm.vote_average;
-        setPoster(posterURL + posterPath);
-        setTitle(randomFilm.title);
-        setOverview(randomFilm.overview);
-        setAvgRating(voteAvg)
-        setReleaseDate(randomFilm.release_date);
+        if(resultsArray.length !== 0) {
+          const randomFilm = resultsArray[randomIndex];
+          const posterURL = 'https://image.tmdb.org/t/p/w500'
+          const posterPath = randomFilm.poster_path;
+          const voteAvg = randomFilm.vote_average;
+          
+          setPoster(posterURL + posterPath)
+          setTitle(randomFilm.title)
+          setOverview(randomFilm.overview)
+          setAvgRating(voteAvg)
+          setReleaseDate(randomFilm.release_date);
+        } else {
+          setError('No Results')
+        }
+
+        
       });
   }
 
@@ -86,13 +96,16 @@ function App() {
         getSelectedDates={getSelectedDates}
         getSelectedRating={getSelectedRating}
         handleSubmit={handleSubmit}/>
+        {!error ?
         <Recommendation 
+        handleSubmit={handleSubmit}
         title={title}
         overview={overview}
         releaseDate={releaseDate}
         avgRating={avgRating}
         poster={poster}
-        />
+        /> :
+        <ErrorMessage />}
       <Footer />  
     </div>
   );
