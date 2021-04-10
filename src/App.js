@@ -43,6 +43,7 @@ function App() {
         getSelectedDates={getSelectedDates}
         getSelectedRating={getSelectedRating}
         handleSubmit={handleSubmit}/>
+      <Footer />  
     </div>
   );
 }
