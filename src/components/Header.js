@@ -3,7 +3,7 @@ const Header = () => {
     
     return (
 <header>
-    <div>
+    <div className='wrapper'>
     <h1>FILMRECS</h1>
     <p>Movie recommendations for when you dont' know what to watch</p>
     </div>

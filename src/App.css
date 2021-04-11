@@ -18,11 +18,15 @@ body {
 
 header {
   height: 400px;
-  max-width: 1280px;
+  max-width: 1400px;
   background-image: url('./assets/popcorn.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0;
+  /* background-size: 150%;
+  background-position: 80% 0; */
+  background-size: 110%;
+  background-position: 80% 20%;
+
+  margin: 0 auto;
 }
 
 header div {
@@ -37,7 +41,7 @@ header p {
   width: 450px;
   text-align: right;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
 }
 
@@ -45,6 +49,7 @@ h1 {
   font-family: 'Bowlby One SC', sans-serif;
   font-size: 4rem;
   margin-bottom: 0;
+  margin-top: 75px;
 }
 
 .wrapper {
@@ -54,14 +59,16 @@ h1 {
 }
 
 button {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
   text-transform: uppercase;
   color: white;
   background-color: black;
   border-radius: 5px;
   border: none;
-  padding: 15px 30px 10px 30px;
-  width: 40%;
-  margin: 0 calc(60%/2);
+  padding: 15px 30px;
+  width: 250px;
+  margin: 0 calc((100% - 250px) / 2);
 }
 
 a {
@@ -93,6 +100,7 @@ a:focus {
 .container img {
   width: 100%;
   height: 300px;
+  object-fit: cover;
   border-radius: 10px 0 0 10px;
   display: block;
 }
@@ -101,9 +109,87 @@ a:focus {
   border-radius: 0px 10px 10px 0px;
 }
 
-.container p {
-
+.recommendation {
+  margin: 40px auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  padding: 20px 0;
 }
+
+.recText {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recText h3{
+margin: 0;
+text-transform: uppercase;
+font-size: 1rem;
+}
+.recText p {
+  margin: 5px 0;
+}
+
+.recText ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.recText li {
+  margin: 30px 0;
+}
+
+.recText button {
+  margin: 0;
+}
+
+.recText .change {
+  margin-top: 30px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.recImage {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.recImage img,
+.mobilePoster {
+  max-width: 100%;
+  max-height: 700px;
+  border-radius: 10px;
+}
+
+.mobilePoster {
+  display: none;
+}
+
+.error {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errorText h3 {
+  text-transform: uppercase;
+}
+
+.retry {
+  text-decoration: underline;
+  
+}
+
+
 
 footer {
   background-color: #000;
@@ -118,6 +204,150 @@ footer {
   margin-top: 20px;
 }
 
+footer p {
+  margin: 10px 0;
+  /* font-size: 0.8rem; */
+  font-weight: bold;
+}
+
 .hidden {
   display: none;
+}
+
+@media (max-width: 950px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+    width: 400px;
+  }
+}
+
+@media (max-width: 850px) {
+
+  .recommendation {
+    flex-direction: column;
+    
+  }
+  .recText {
+    width: 100%;
+    align-items: center; 
+  }
+
+  .recText ul {
+    margin: 30px 50px 30px 60px;
+  }
+
+  .desktopPoster {
+    display: none;
+  }
+  
+  .mobilePoster {
+    display: initial;
+    max-width: 50%;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  header {
+    background-size: 125%;
+  }
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+    width: 350px;
+  }
+   h2 {
+     margin-top: 40px;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .container {
+    flex-direction: column;
+    width: 60%;
+    margin: 40px auto;
+  }
+
+  .imageContainer,
+  .textContainer {
+  width: 100%;
+}
+
+.container img {
+  border-radius: 10px 10px 0 0;
+  height: 200px;
+}
+
+.middleImage {
+  order: -1;
+}
+
+footer {
+  margin-top: 40px;
+}
+  footer p {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 650px) {
+
+  header {
+    background-size: 125%;
+    background-position: 100% 0;
+    height: 300px;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+
+  header p {
+    font-size: 0.8rem;
+    width: 325px;
+  }
+}
+
+@media (max-width: 580px) {
+
+  header {
+    height: 250px;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 0.7rem;
+    width: 280px;
+  }
+
+  .container {
+    width: 75%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  header {
+    height: 225px;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 0.6rem;
+    width: 250px;
+  }
+
+  .mobilePoster {
+    max-width: 60%;
+  }
 }

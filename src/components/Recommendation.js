@@ -4,9 +4,10 @@ import '../App.css'
 const Recommendation = (props) => {
     
     return (
-        <div className={`recommendation ${props.hideRec}`}>
+        <div className={`recommendation wrapper ${props.hideRec}`}>
             <div className="recText">
                 <h3>Our Recommendation</h3>
+                <img className='mobilePoster' src={props.poster} alt={`Film poster for ${props.title}`}/>
                 <ul>
                     <li>
                         <h3>Film:</h3>
@@ -25,12 +26,12 @@ const Recommendation = (props) => {
                         <p>{props.avgRating} / 10</p>
                     </li>
                 </ul>
+            <button onClick={props.handleSubmit}>Get A New Rec</button>
+            <p onClick={props.resetQuestions} className="change">Change Your Answers</p>
             </div>
             <div className="recImage">
-                <img src={props.poster} alt={`Film poster for ${props.title}`}/>
+                <img className="desktopPoster" src={props.poster} alt={`Film poster for ${props.title}`}/>
             </div>
-            <button onClick={props.handleSubmit}>Get A New Rec</button>
-            <p onClick={props.resetQuestions} className="reset">Change Your Answers</p>
         </div>
     )
 }
