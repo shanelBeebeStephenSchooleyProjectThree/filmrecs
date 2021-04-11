@@ -7,7 +7,7 @@ import audience from '../assets/movieAudience.jpg'
 const Questions = (props) => {
     
     return (
-        <div className='wrapper'>
+        <div className={`wrapper ${props.hideQuestions}`}>
             <h2>Let's start by answering a few questions first...</h2>
             <div className='container'>
                 <div className='imageContainer'>
@@ -106,9 +106,8 @@ const Questions = (props) => {
                             <option data-low-rating={5} data-high-rating={10}>5+</option>
                             <option data-low-rating={6} data-high-rating={10}>6+</option>
                             <option data-low-rating={7} data-high-rating={10}>7+</option>
-                            <option data-low-rating={8} data-high-rating={10}>8+</option>
-                            <option data-low-rating={9} data-high-rating={10}>9+</option>
-
+                            <option data-low-rating={8} data-high-rating={10}>8 or higher</option>
+                            
                         </select>
                     </form>
                 </div>

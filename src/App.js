@@ -24,6 +24,11 @@ function App() {
   const [poster, setPoster] = useState('');
   const [error, setError] = useState('');
 
+  // State for hidden class
+  const [hideRec, setHideRec] = useState('hidden');
+  const [hideQuestions, setHideQuestions] = useState('');
+
+
   const getSelectedGenre = (e) => {
     setGenre(parseInt(e.target.value));
   }
@@ -67,6 +72,8 @@ function App() {
       })
       .then(function (res) {
         setError('');
+        setHideRec('');
+        setHideQuestions('hidden')
         const resultsArray = res.data.results;
         const randomIndex = Math.floor(Math.random() * resultsArray.length)
         if(resultsArray.length !== 0) {
@@ -88,6 +95,11 @@ function App() {
       });
   }
 
+  const resetQuestions = () => {
+    setHideQuestions('');
+    setHideRec('hidden')
+  }
+
   return (
     <div className='app'>
       <Header />
@@ -95,7 +107,9 @@ function App() {
         getSelectedGenre={getSelectedGenre}
         getSelectedDates={getSelectedDates}
         getSelectedRating={getSelectedRating}
-        handleSubmit={handleSubmit}/>
+        handleSubmit={handleSubmit}
+        hideQuestions={hideQuestions}
+        />
         {!error ?
         <Recommendation 
         handleSubmit={handleSubmit}
@@ -104,8 +118,13 @@ function App() {
         releaseDate={releaseDate}
         avgRating={avgRating}
         poster={poster}
+        hideRec={hideRec}
+        resetQuestions={resetQuestions}
         /> :
-        <ErrorMessage />}
+        <ErrorMessage 
+        hideRec={hideRec}
+        resetQuestions={resetQuestions}
+        />}
       <Footer />  
     </div>
   );

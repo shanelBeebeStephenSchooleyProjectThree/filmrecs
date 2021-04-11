@@ -1,10 +1,11 @@
 
 
-const ErrorMessage = () => {
+const ErrorMessage = (props) => {
     return (
-        <div className='recommendation'>
+        <div className={`recommendation ${props.hideRec}`}>
             <h3>Sorry!</h3>
-            <p>Your answers produced no result. Try again.</p>
+            <p>Your answers produced no result. </p>
+            <p onClick={props.resetQuestions}>Try Again!</p>
         </div>
     )
 }

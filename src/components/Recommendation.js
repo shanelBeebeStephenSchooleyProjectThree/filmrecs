@@ -1,9 +1,10 @@
 import '../App.css'
 
+
 const Recommendation = (props) => {
     
     return (
-        <div className='recommendation'>
+        <div className={`recommendation ${props.hideRec}`}>
             <div className="recText">
                 <h3>Our Recommendation</h3>
                 <ul>
@@ -29,7 +30,7 @@ const Recommendation = (props) => {
                 <img src={props.poster} alt={`Film poster for ${props.title}`}/>
             </div>
             <button onClick={props.handleSubmit}>Get A New Rec</button>
-            <p className="reset">Change Your Answers</p>
+            <p onClick={props.resetQuestions} className="reset">Change Your Answers</p>
         </div>
     )
 }
