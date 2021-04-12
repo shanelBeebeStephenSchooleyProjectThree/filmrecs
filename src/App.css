@@ -52,13 +52,18 @@ h1 {
   margin-top: 75px;
 }
 
+h3 {
+  text-transform: uppercase;
+}
+
 .wrapper {
   max-width: 1150px;
   width: 90%;
   margin: 0 auto;
 }
 
-button {
+button,
+.submit {
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
@@ -81,7 +86,8 @@ a:focus {
   text-decoration: underline;
 }
 
-.container {
+.container,
+.userRec {
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
@@ -204,8 +210,6 @@ font-size: 1rem;
   
 }
 
-
-
 footer {
   background-color: #000;
   color: white;
@@ -227,6 +231,44 @@ footer p {
 
 .hidden {
   display: none;
+}
+
+.submitHeader input,
+.submitText {
+  font-family: 'Quicksand', sans-serif;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.submitHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submitHeader input {
+  width: 48%;
+  margin-bottom: 10px;
+}
+
+.submitText {
+  width: 100%;
+  margin: 20px 0;
+  min-height: 300px;
+}
+
+.userRecHeading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userRecHeading h3 {
+ text-transform: uppercase;
+}
+
+.userRec {
+  flex-direction: column;
+  padding: 0 40px;
 }
 
 @media (max-width: 950px) {
@@ -366,3 +408,4 @@ footer {
     max-width: 60%;
   }
 }
+
