@@ -7,6 +7,8 @@ import Questions from './components/Questions';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import firebase from './firebase';
+import UserReviews from './components/UserReviews'
+import SubmitReview from './components/SubmitReview';
 
 
 
@@ -30,7 +32,6 @@ function App() {
   // State for hidden class
   const [hideRec, setHideRec] = useState('hidden');
   const [hideQuestions, setHideQuestions] = useState('');
-
 
   const getSelectedGenre = (e) => {
     setGenre(parseInt(e.target.value));
@@ -128,6 +129,8 @@ function App() {
         hideRec={hideRec}
         resetQuestions={resetQuestions}
         />}
+        <SubmitReview />
+        <UserReviews />
       <Footer />  
     </div>
   );
