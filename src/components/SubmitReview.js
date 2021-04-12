@@ -26,6 +26,7 @@ export const SubmitReview = () => {
 
     const handleUserReview = (event) => {
         setUserReview(event.target.value);
+
     }
 
     const handleClick = (event) => {
@@ -37,7 +38,6 @@ export const SubmitReview = () => {
         setUserReview('');
     }
 
-  
 
     return (
         <div className="wrapper">

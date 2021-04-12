@@ -8,7 +8,7 @@ const UserReviews = () => {
             const newState = [];
             const data = response.val()
             for (let key in data) {
-                newState.push(data[key]);
+                newState.unshift(data[key]);
             } 
             setReviews(newState);   
         })
@@ -24,7 +24,9 @@ const UserReviews = () => {
             <div className="userRec">
                 <div className="userRecHeading">
                     <h3>Film: {review.filmName}</h3>
-                    <h3>Recommended by {review.username}</h3>
+                    {review.username 
+                    ? <h3>Recommended by {review.username}</h3>
+                    : <h3>Recommended by Anonymous</h3>}
                 </div>
                 <div>
                     <h3>Review</h3>

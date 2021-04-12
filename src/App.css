@@ -52,6 +52,10 @@ h1 {
   margin-top: 75px;
 }
 
+h3 {
+  text-transform: uppercase;
+}
+
 .wrapper {
   max-width: 1150px;
   width: 90%;
@@ -244,7 +248,6 @@ footer p {
 
 .submitHeader input {
   width: 48%;
-
   margin-bottom: 10px;
 }
 
@@ -257,6 +260,10 @@ footer p {
 .userRecHeading {
   display: flex;
   justify-content: space-between;
+}
+
+.userRecHeading h3 {
+ text-transform: uppercase;
 }
 
 .userRec {
