@@ -6,6 +6,9 @@ import Footer from './components/Footer';
 import Questions from './components/Questions';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import firebase from './firebase';
+
+
 
 
 function App() {
