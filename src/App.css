@@ -109,6 +109,21 @@ a:focus {
   border-radius: 0px 10px 10px 0px;
 }
 
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 5px;
+  width: 250px;
+  font-family: "Quicksand", sans-serif;
+  background-image: url(./assets/triangle.png);
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  background-size: 25px;
+}
+
 .recommendation {
   margin: 40px auto;
   border: 1px solid black;
