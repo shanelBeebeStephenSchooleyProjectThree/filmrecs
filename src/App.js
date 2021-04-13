@@ -4,9 +4,8 @@ import Recommendation from './components/Recommendation';
 import ErrorMessage from './components/ErrorMessage'
 import Footer from './components/Footer';
 import Questions from './components/Questions';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import firebase from './firebase';
 import UserReviews from './components/UserReviews'
 import SubmitReview from './components/SubmitReview';
 
