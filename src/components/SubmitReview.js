@@ -56,12 +56,19 @@ export const SubmitReview = () => {
             <h3>Leave your own recommendation:</h3>
             <form>
                 <div className="submitHeader">
+                    <label 
+                    htmlFor="userFilm"
+                    className='sr-only'
+                    >Enter your recommended film</label>
                     <input 
                     onChange={handleFilmChange} id="userFilm" 
                     type="text" 
                     placeholder="FILM:" 
                     value={userFilm}
                     ></input>
+                    <label 
+                    htmlFor="username" className="sr-only">Enter Your Name(optional)
+                    </label>
                     <input 
                     onChange={handleUsername}
                     id="username" 
@@ -70,6 +77,10 @@ export const SubmitReview = () => {
                     value={username}
                     ></input>
                 </div>
+                <label 
+                htmlFor="userReview" className="sr-only">
+                    Enter Your Review of the Film
+                </label>
                 <textarea  
                 onChange={handleUserReview} 
                 id="userReview" 

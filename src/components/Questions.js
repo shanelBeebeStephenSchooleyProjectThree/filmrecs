@@ -9,7 +9,7 @@ const Questions = ((props) => {
     
     return (
         <div className={`wrapper ${props.hideQuestions}`}>
-            <h2>Let's start by answering a few questions first...</h2>
+            <h2>Let's start by answering a few questions...</h2>
             <div className='container'>
                 <div className='imageContainer'>
                     <img src={filmReel} alt='Film Reel'/>
@@ -17,7 +17,7 @@ const Questions = ((props) => {
                 <div className='textContainer'>
                     <p>What genre are you in the mood for?</p>
                     <form>
-                        <label htmlFor='genre'></label>
+                        <label htmlFor='genre' className='sr-only'>Genre</label>
                         <select 
                         onChange={props.getSelectedGenre} 
                         name='genre' 
@@ -52,7 +52,7 @@ const Questions = ((props) => {
                         Pick a time period…
                     </p>
                     <form>
-                        <label htmlFor='decade'></label>
+                        <label htmlFor='decade' className='sr-only'>Time Period</label>
                         <select 
                         onChange={props.getSelectedDates} 
                         name='decade' 
@@ -107,7 +107,7 @@ const Questions = ((props) => {
                         Pick a viewer rating…
                     </p>
                     <form>
-                        <label htmlFor='rating'></label>
+                        <label htmlFor='rating' className='sr-only'>Rating(out of 10)</label>
                         <select 
                         onChange={props.getSelectedRating} name='rating' 
                         id='rating'
