@@ -74,7 +74,7 @@ export const SubmitReview = () => {
                 onChange={handleUserReview} 
                 id="userReview" 
                 className="submitText" 
-                maxlength="2500" 
+                maxLength="2500" 
                 placeholder="YOUR REVIEW:"
                 value={userReview}
                 ></textarea>

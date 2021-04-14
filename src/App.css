@@ -194,6 +194,10 @@ font-size: 1rem;
   display: none;
 }
 
+.getRec {
+  margin-bottom: 80px;
+}
+
 .error {
   margin: 30px auto;
   display: flex;
@@ -208,29 +212,6 @@ font-size: 1rem;
 .retry {
   text-decoration: underline;
   
-}
-
-footer {
-  background-color: #000;
-  color: white;
-  text-transform: uppercase;
-  text-align: center;
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-footer p {
-  margin: 10px 0;
-  /* font-size: 0.8rem; */
-  font-weight: bold;
-}
-
-.hidden {
-  display: none;
 }
 
 .submitHeader input,
@@ -271,6 +252,28 @@ footer p {
   padding: 0 40px;
 }
 
+.hidden {
+  display: none;
+}
+
+footer {
+  background-color: #000;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
 @media (max-width: 950px) {
   h1 {
     font-size: 3.5rem;
@@ -279,6 +282,10 @@ footer p {
   header p {
     font-size: 1rem;
     width: 400px;
+  }
+
+  .userRec h3 {
+    font-size: 1rem;
   }
 }
 
@@ -305,6 +312,10 @@ footer p {
     display: initial;
     max-width: 50%;
     margin-top: 30px;
+  }
+
+  .userRecHeading {
+    flex-direction: column;
   }
 }
 
@@ -387,6 +398,15 @@ footer {
 
   .container {
     width: 75%;
+  }
+
+  .userRec h3 {
+    font-size: 0.9rem;
+  }
+
+  .userRecText {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 }
 

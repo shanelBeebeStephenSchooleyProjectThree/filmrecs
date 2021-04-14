@@ -4,7 +4,7 @@ import Recommendation from './components/Recommendation';
 import ErrorMessage from './components/ErrorMessage'
 import Footer from './components/Footer';
 import Questions from './components/Questions';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import UserReviews from './components/UserReviews'
 import SubmitReview from './components/SubmitReview';
@@ -31,6 +31,9 @@ function App() {
   // State for hidden class
   const [hideRec, setHideRec] = useState('hidden');
   const [hideQuestions, setHideQuestions] = useState('');
+
+  // Ref to target html element to scroll to when submitting and resetting questions
+  const scrollRef = useRef()
 
   const getSelectedGenre = (e) => {
     setGenre(parseInt(e.target.value));
@@ -85,13 +88,15 @@ function App() {
           const posterPath = randomFilm.poster_path;
           const voteAvg = randomFilm.vote_average;
           
-          setPoster(posterURL + posterPath)
-          setTitle(randomFilm.title)
-          setOverview(randomFilm.overview)
-          setAvgRating(voteAvg)
+          setPoster(posterURL + posterPath);
+          setTitle(randomFilm.title);
+          setOverview(randomFilm.overview);
+          setAvgRating(voteAvg);
           setReleaseDate(randomFilm.release_date);
+          scrollRef.current.scrollIntoView({behavior: 'smooth'});
         } else {
           setError('No Results')
+          scrollRef.current.scrollIntoView({behavior: 'smooth'});
         }
 
         
@@ -101,33 +106,37 @@ function App() {
   const resetQuestions = () => {
     setHideQuestions('');
     setHideRec('hidden')
+    scrollRef.current.scrollIntoView({behavior: 'smooth'});
   }
 
   return (
     <div className='app'>
-      <Header />
-      <Questions
+      <Header 
+      ref={scrollRef}/>
+      <Questions 
         getSelectedGenre={getSelectedGenre}
         getSelectedDates={getSelectedDates}
         getSelectedRating={getSelectedRating}
         handleSubmit={handleSubmit}
         hideQuestions={hideQuestions}
         />
-        {!error ?
-        <Recommendation 
-        handleSubmit={handleSubmit}
-        title={title}
-        overview={overview}
-        releaseDate={releaseDate}
-        avgRating={avgRating}
-        poster={poster}
-        hideRec={hideRec}
-        resetQuestions={resetQuestions}
-        /> :
-        <ErrorMessage 
-        hideRec={hideRec}
-        resetQuestions={resetQuestions}
-        />}
+        {!error ? 
+          <Recommendation 
+          handleSubmit={handleSubmit}
+          title={title}
+          overview={overview}
+          releaseDate={releaseDate}
+          avgRating={avgRating}
+          poster={poster}
+          hideRec={hideRec}
+          resetQuestions={resetQuestions}
+          /> :
+          <ErrorMessage
+          hideRec={hideRec}
+          resetQuestions={resetQuestions}
+          />
+        }
+
         <SubmitReview />
         <UserReviews />
       <Footer />  

@@ -1,7 +1,7 @@
 import '../App.css'
 
 
-const Recommendation = (props) => {
+const Recommendation = ((props) => {
     
     return (
         <div className={`recommendation wrapper ${props.hideRec}`}>
@@ -34,6 +34,6 @@ const Recommendation = (props) => {
             </div>
         </div>
     )
-}
+})
 
 export default Recommendation
