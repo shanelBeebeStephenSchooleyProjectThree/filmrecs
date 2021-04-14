@@ -16,7 +16,7 @@ const IndividualRec = ({review}) => {
                     ? <h3>Recommended by {review.username}</h3>
                     : <h3>Recommended by Anonymous</h3>}
                 </div>
-                <div >
+                <div className="toggleReview" >
                    {hideReview === 'hidden' ? (
                        <h3 onClick={handleClick}>See Review</h3>
 

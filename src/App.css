@@ -19,8 +19,6 @@ header {
   max-width: 1400px;
   background-image: url('./assets/popcorn.jpg');
   background-repeat: no-repeat;
-  /* background-size: 150%;
-  background-position: 80% 0; */
   background-size: 110%;
   background-position: 80% 20%;
 
@@ -72,6 +70,7 @@ button,
   padding: 15px 30px;
   width: 250px;
   margin: 0 calc((100% - 250px) / 2);
+  cursor: pointer;
 }
 
 a {
@@ -171,6 +170,7 @@ font-size: 1rem;
   text-decoration: underline;
   text-transform: uppercase;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .recImage {
@@ -248,6 +248,11 @@ font-size: 1rem;
 .userRec {
   flex-direction: column;
   padding: 0 40px;
+}
+
+.toggleReview {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .hidden {
