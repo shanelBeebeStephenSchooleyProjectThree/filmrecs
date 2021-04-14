@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Questions from './components/Questions';
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
-import UserReviews from './components/UserReviews'
+import UserRec from './components/UserRec'
 import SubmitReview from './components/SubmitReview';
 
 
@@ -138,7 +138,7 @@ function App() {
         }
 
         <SubmitReview />
-        <UserReviews />
+        <UserRec />
       <Footer />  
     </div>
   );

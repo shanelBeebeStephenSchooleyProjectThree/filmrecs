@@ -2,7 +2,7 @@ import firebase from '../firebase';
 import React, { useState, useEffect } from 'react';
 import IndividualRec from './IndividualRec';
 
-const UserReviews = () => {
+const UserRec = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect( () => {
@@ -30,4 +30,4 @@ const UserReviews = () => {
     )
 }
 
-export default UserReviews
+export default UserRec;
