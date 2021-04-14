@@ -1,6 +1,5 @@
 
-
-const ErrorMessage = (props) => {
+const ErrorMessage = ((props) => {
     return (
         <div className={`error wrapper ${props.hideRec}`}>
             <div className="errorText">
@@ -10,6 +9,6 @@ const ErrorMessage = (props) => {
             </div>
         </div>
     )
-}
+})
 
 export default ErrorMessage

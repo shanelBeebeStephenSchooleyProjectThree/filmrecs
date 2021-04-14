@@ -1,10 +1,11 @@
-import '../App.css';
 import filmReel from '../assets/filmReel.jpg'
 import cinema from '../assets/cinema.jpg'
 import audience from '../assets/movieAudience.jpg'
 
+import '../App.css';
 
-const Questions = (props) => {
+
+const Questions = ((props) => {
     
     return (
         <div className={`wrapper ${props.hideQuestions}`}>
@@ -17,8 +18,12 @@ const Questions = (props) => {
                     <p>What genre are you in the mood for?</p>
                     <form>
                         <label htmlFor='genre'></label>
-                        <select onChange={props.getSelectedGenre} name='genre' id='genre'>
-                            <option selected disabled>Genre...</option>
+                        <select 
+                        onChange={props.getSelectedGenre} 
+                        name='genre' 
+                        id='genre'
+                        defaultValue={'DEFAULT'}>
+                            <option value="DEFAULT" disabled>Genre...</option>
                             <option value={28}>Action</option>
                             <option value={12}>Adventure</option>
                             <option value={16}>Animation</option>
@@ -48,8 +53,12 @@ const Questions = (props) => {
                     </p>
                     <form>
                         <label htmlFor='decade'></label>
-                        <select onChange={props.getSelectedDates} name='decade' id='decade'>
-                            <option selected disabled>Time Period...</option>
+                        <select 
+                        onChange={props.getSelectedDates} 
+                        name='decade' 
+                        id='decade'
+                        defaultValue={'DEFAULT'}>
+                            <option value="DEFAULT" disabled>Time Period...</option>
                             <option 
                             value='early' 
                             data-startdate="1920-01-01" 
@@ -99,8 +108,11 @@ const Questions = (props) => {
                     </p>
                     <form>
                         <label htmlFor='rating'></label>
-                        <select onChange={props.getSelectedRating} name='rating' id='rating'>
-                            <option selected disabled>Rating (out of 10)...</option>
+                        <select 
+                        onChange={props.getSelectedRating} name='rating' 
+                        id='rating'
+                        defaultValue={'DEFAULT'}>
+                            <option value="DEFAULT" disabled>Rating (out of 10)...</option>
                             <option data-low-rating={0} data-high-rating={3.9}>Less than 4</option>
                             <option data-low-rating={4} data-high-rating={10}>4+</option>
                             <option data-low-rating={5} data-high-rating={10}>5+</option>
@@ -112,9 +124,9 @@ const Questions = (props) => {
                     </form>
                 </div>
             </div>
-            <button onClick={props.handleSubmit}>Get your rec</button>
+            <button className="getRec" onClick={props.handleSubmit}>Get your rec</button>
         </div>
     )
-}
+})
 
 export default Questions
